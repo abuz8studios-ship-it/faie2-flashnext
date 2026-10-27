@@ -1,0 +1,19 @@
+===== QUANT GATE :: E:\ABU\ComfyUI\.venv\Scripts\python.exe E:\ABU\FAIE2\flashnext\test_fn_quants.py =====
+
+STDERR(tail): Traceback (most recent call last):
+  File "E:\ABU\FAIE2\flashnext\test_fn_quants.py", line 9, in <module>
+    from ref_fn import T, NG, dequant  # noqa: E402  (also puts gguf-py on the path)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\ABU\FAIE2\flashnext\ref_fn.py", line 21, in <module>
+    import transformers.models.qwen4_exp.modeling_qwen4_exp as M  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ModuleNotFoundError: No module named 'transformers.models.qwen4_exp'
+
+===== QUANT GATE exit 1 in 16s =====
+===== BENCH 160 :: E:\ABU\ComfyUI\.venv\Scripts\python.exe E:\ABU\FAIE2\flashnext\bench_fn.py 160 =====
+split 26, GPU0 23.3 GB, GPU1 24.7 GB, prompt 30 tokens
+prefill 30 tok in 269 ms (111 tok/s); decode 159 tok in 920 ms (172.9 tok/s, last forward 5.70 ms)
+'```python\ndef is_palindrome(s: str) -> bool:\n    """\n    Check whether a string is a palindrome.\n\n    A palindrome reads the same forwards and backwards.\n    This function compares the string to its reverse.\n\n    Args:\n        s: The input string to check.\n\n    Returns:\n        True if the string is a palindrome, False otherwise.\n    """\n    return s == s[::-1]\n```\n\n**Explanation:**  \nThe function works by reversing the input string using Python\'s slice notation `s[::-1]` (which reverses the string) and comparing it to the original. If both are identical, the string is a palindrome. This approach is concise and runs in O(n) time and O(n) space due'
+
+===== BENCH 160 exit 0 in 36s =====
+RUN2 DONE

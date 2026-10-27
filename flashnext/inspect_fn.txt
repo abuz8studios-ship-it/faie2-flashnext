@@ -1,0 +1,164 @@
+===== Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_XXS-00001-of-00002.gguf
+  general.architecture = qwen4exp
+  general.type = model
+  general.sampling.top_k = 20
+  general.sampling.top_p = 0.949999988079071
+  general.sampling.temp = 1.0
+  general.name = Qwen3.8-Flash-Next GSQ-RCO
+  general.description = A Preview of the Qwen4 Architecture
+  general.size_label = 512x56B
+  qwen4exp.block_count = 48
+  qwen4exp.context_length = 262144
+  qwen4exp.embedding_length = 2560
+  qwen4exp.attention.head_count = 24
+  qwen4exp.attention.head_count_kv = 2
+  qwen4exp.rope.dimension_sections = [11, 11, 10, 0]
+  qwen4exp.rope.freq_base = 10000000.0
+  qwen4exp.attention.layer_norm_rms_epsilon = 9.999999974752427e-07
+  qwen4exp.expert_count = 512
+  qwen4exp.expert_used_count = 10
+  qwen4exp.attention.key_length = 256
+  qwen4exp.attention.value_length = 256
+  qwen4exp.expert_feed_forward_length = 640
+  qwen4exp.expert_shared_feed_forward_length = 640
+  qwen4exp.ssm.conv_kernel = 4
+  qwen4exp.ssm.state_size = 128
+  qwen4exp.ssm.group_count = 16
+  qwen4exp.ssm.time_step_rank = 48
+  qwen4exp.ssm.inner_size = 6144
+  qwen4exp.full_attention_interval = 4
+  qwen4exp.rope.dimension_count = 64
+  qwen4exp.hyper_connection.count = 4
+  qwen4exp.hyper_connection.low_rank = 320
+  qwen4exp.attention.indexer.head_count = 4
+  qwen4exp.attention.indexer.key_length = 128
+  qwen4exp.attention.indexer.top_k = 2048
+  qwen4exp.attention.compress_ratios = [0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 4, 0, 0, 0, 4]
+  qwen4exp.ple.layers = [1]
+  qwen4exp.ple.ngram_size = 3
+  qwen4exp.ple.heads_per_ngram = 8
+  qwen4exp.ple.conv_kernel = 4
+  qwen4exp.ple.eos_token_id = 248044
+  qwen4exp.embedding_length_per_layer_input = 160
+  qwen4exp.ple.layer_multipliers = [23703573157769, 20109073645365, 8052911324071]
+  qwen4exp.ple.head_offsets = [0, 20000003, 40000026, 60000059, 80000106, 100000165, 120000228, 140000297, 160000374, 180000455, 200000548, 220000655, 240000802, 260000955, 280001114, 300001275]
+  qwen4exp.ple.head_vocab_sizes = [20000003, 20000023, 20000033, 20000047, 20000059, 20000063, 20000069, 20000077, 20000081, 20000093, 20000107, 20000147, 20000153, 20000159, 20000161, 20000171]
+  tokenizer.ggml.model = gpt2
+  tokenizer.ggml.pre = qwen35
+  tokenizer.ggml.eos_token_id = 248046
+  tokenizer.ggml.padding_token_id = 248044
+  tokenizer.ggml.bos_token_id = 248044
+  tokenizer.ggml.add_bos_token = False
+  tokenizer.chat_template = {%- set image_count = namespace(value=0) %}
+{%- set video_count = namespace(value=0) %}
+{%- macro render_content(content, do_vision_count, is_system_content=false) %}
+    {%- if content is string %}
+ 
+  qwen4exp.ple.image_token_id = 248056
+  general.quantized_by = ISTA DASLab
+  general.repo_url = https://huggingface.co/ISTA-DASLab
+  general.tags = ['gsq-rco', 'ista-daslab']
+  quantize.imatrix.file = imatrix-qwen3.8-flash-next.gguf
+  quantize.imatrix.dataset = calib_qwen3.8-flash-next.tokids
+  quantize.imatrix.entries_count = 926
+  quantize.imatrix.chunks_count = 1000
+  general.file_type = 23
+  general.quantization_version = 2
+  split.no = 0
+  split.count = 2
+  split.tensors.count = 1224
+  types: {'Q5_K': (10, 0.53), 'BF16': (484, 1.53), 'F32': (292, 0.01), 'IQ3_S': (79, 9.75), 'IQ4_XS': (61, 0.34), 'IQ4_NL': (18, 8.49), 'Q8_0': (96, 0.89), 'IQ2_XS': (20, 4.85), 'Q6_K': (42, 0.49), 'Q2_0': (30, 7.08), 'IQ2_XXS': (18, 3.89), 'F16': (1, 0.0), 'Q4_K': (40, 0.25), 'IQ2_S': (20, 5.37), 'IQ3_XXS': (12, 3.85)}
+  output.weight                                           Q5_K     [np.uint64(2560), np.uint64(248320)] 437.04 MB
+  output_hc_down.weight                                   BF16     [np.uint64(10240), np.uint64(320)] 6.55 MB
+  output_hc_norm.weight                                   F32      [np.uint64(10240)] 0.04 MB
+  output_hc_up.weight                                     BF16     [np.uint64(320), np.uint64(10240)] 6.55 MB
+  token_embd.weight                                       IQ3_S    [np.uint64(2560), np.uint64(248320)] 273.15 MB
+  blk.0.attn_gate.weight                                  IQ3_S    [np.uint64(2560), np.uint64(6144)] 6.76 MB
+  blk.0.attn_qkv.weight                                   IQ4_XS   [np.uint64(2560), np.uint64(10240)] 13.93 MB
+  blk.0.ffn_down_exps.weight                              IQ4_NL   [np.uint64(640), np.uint64(2560), np.uint64(512)] 471.86 MB
+  blk.0.ffn_down_shexp.weight                             Q8_0     [np.uint64(640), np.uint64(2560)] 1.74 MB
+  blk.0.ffn_gate_exps.weight                              IQ2_XS   [np.uint64(2560), np.uint64(640), np.uint64(512)] 242.48 MB
+  blk.0.ffn_gate_inp.weight                               BF16     [np.uint64(2560), np.uint64(512)] 2.62 MB
+  blk.0.ffn_gate_inp_shexp.weight                         BF16     [np.uint64(2560)] 0.01 MB
+  blk.0.ffn_gate_shexp.weight                             IQ4_XS   [np.uint64(2560), np.uint64(640)] 0.87 MB
+  blk.0.ffn_up_exps.weight                                IQ2_XS   [np.uint64(2560), np.uint64(640), np.uint64(512)] 242.48 MB
+  blk.0.ffn_up_shexp.weight                               IQ3_S    [np.uint64(2560), np.uint64(640)] 0.70 MB
+  blk.0.hc_attn_down.weight                               BF16     [np.uint64(10240), np.uint64(320)] 6.55 MB
+  blk.0.hc_attn_inject.weight                             BF16     [np.uint64(10240), np.uint64(4)] 0.08 MB
+  blk.0.hc_attn_norm.weight                               F32      [np.uint64(10240)] 0.04 MB
+  blk.0.hc_attn_up.weight                                 BF16     [np.uint64(320), np.uint64(10240)] 6.55 MB
+  blk.0.hc_ffn_down.weight                                BF16     [np.uint64(10240), np.uint64(320)] 6.55 MB
+  blk.0.hc_ffn_inject.weight                              BF16     [np.uint64(10240), np.uint64(4)] 0.08 MB
+  blk.0.hc_ffn_norm.weight                                F32      [np.uint64(10240)] 0.04 MB
+  blk.0.hc_ffn_up.weight                                  BF16     [np.uint64(320), np.uint64(10240)] 6.55 MB
+  blk.0.ssm_a                                             F32      [np.uint64(48)] 0.00 MB
+  blk.0.ssm_alpha.weight                                  BF16     [np.uint64(2560), np.uint64(48)] 0.25 MB
+  blk.0.ssm_beta.weight                                   BF16     [np.uint64(2560), np.uint64(48)] 0.25 MB
+  blk.0.ssm_conv1d.weight                                 F32      [np.uint64(4), np.uint64(10240)] 0.16 MB
+  blk.0.ssm_dt.bias                                       F32      [np.uint64(48)] 0.00 MB
+  blk.0.ssm_norm.weight                                   F32      [np.uint64(128)] 0.00 MB
+  blk.0.ssm_out.weight                                    Q8_0     [np.uint64(6144), np.uint64(2560)] 16.71 MB
+  blk.1.attn_gate.weight                                  Q6_K     [np.uint64(2560), np.uint64(6144)] 12.90 MB
+  blk.1.attn_qkv.weight                                   IQ4_XS   [np.uint64(2560), np.uint64(10240)] 13.93 MB
+  blk.1.ffn_down_exps.weight                              Q2_0     [np.uint64(640), np.uint64(2560), np.uint64(512)] 235.93 MB
+  blk.1.ffn_down_shexp.weight                             Q8_0     [np.uint64(640), np.uint64(2560)] 1.74 MB
+  blk.1.ffn_gate_exps.weight                              IQ2_XXS  [np.uint64(2560), np.uint64(640), np.uint64(512)] 216.27 MB
+  blk.1.ffn_gate_inp.weight                               BF16     [np.uint64(2560), np.uint64(512)] 2.62 MB
+  blk.1.ffn_gate_inp_shexp.weight                         BF16     [np.uint64(2560)] 0.01 MB
+  blk.1.ffn_gate_shexp.weight                             IQ4_XS   [np.uint64(2560), np.uint64(640)] 0.87 MB
+  blk.1.ffn_up_exps.weight                                IQ2_XXS  [np.uint64(2560), np.uint64(640), np.uint64(512)] 216.27 MB
+  blk.1.ffn_up_shexp.weight                               IQ3_S    [np.uint64(2560), np.uint64(640)] 0.70 MB
+  blk.1.hc_attn_down.weight                               BF16     [np.uint64(10240), np.uint64(320)] 6.55 MB
+  blk.1.hc_attn_inject.weight                             BF16     [np.uint64(10240), np.uint64(4)] 0.08 MB
+  blk.1.hc_attn_norm.weight                               F32      [np.uint64(10240)] 0.04 MB
+  blk.1.hc_attn_up.weight                                 BF16     [np.uint64(320), np.uint64(10240)] 6.55 MB
+  blk.1.hc_ffn_down.weight                                BF16     [np.uint64(10240), np.uint64(320)] 6.55 MB
+  blk.1.hc_ffn_inject.weight                              BF16     [np.uint64(10240), np.uint64(4)] 0.08 MB
+  blk.1.hc_ffn_norm.weight                                F32      [np.uint64(10240)] 0.04 MB
+  blk.1.hc_ffn_up.weight                                  BF16     [np.uint64(320), np.uint64(10240)] 6.55 MB
+  blk.1.ple_conv1d.weight                                 F16      [np.uint64(4), np.uint64(10240)] 0.08 MB
+  blk.1.ple_key.weight                                    BF16     [np.uint64(2560), np.uint64(10240)] 52.43 MB
+  blk.1.ple_norm_conv.weight                              F32      [np.uint64(10240)] 0.04 MB
+  blk.1.ple_norm_key.weight                               F32      [np.uint64(10240)] 0.04 MB
+  blk.1.ple_norm_query.weight                             F32      [np.uint64(10240)] 0.04 MB
+  blk.1.ple_value.weight                                  BF16     [np.uint64(2560), np.uint64(2560)] 13.11 MB
+  blk.1.ssm_a                                             F32      [np.uint64(48)] 0.00 MB
+  blk.1.ssm_alpha.weight                                  BF16     [np.uint64(2560), np.uint64(48)] 0.25 MB
+  blk.1.ssm_beta.weight                                   BF16     [np.uint64(2560), np.uint64(48)] 0.25 MB
+  blk.1.ssm_conv1d.weight                                 F32      [np.uint64(4), np.uint64(10240)] 0.16 MB
+  blk.1.ssm_dt.bias                                       F32      [np.uint64(48)] 0.00 MB
+  blk.1.ssm_norm.weight                                   F32      [np.uint64(128)] 0.00 MB
+  blk.1.ssm_out.weight                                    Q8_0     [np.uint64(6144), np.uint64(2560)] 16.71 MB
+  blk.3.attn_k.weight                                     IQ4_XS   [np.uint64(2560), np.uint64(512)] 0.70 MB
+  blk.3.attn_k_norm.weight                                F32      [np.uint64(256)] 0.00 MB
+  blk.3.attn_output.weight                                Q8_0     [np.uint64(6144), np.uint64(2560)] 16.71 MB
+  blk.3.attn_q.weight                                     IQ4_XS   [np.uint64(2560), np.uint64(12288)] 16.71 MB
+  blk.3.attn_q_norm.weight                                F32      [np.uint64(256)] 0.00 MB
+  blk.3.attn_v.weight                                     Q6_K     [np.uint64(2560), np.uint64(512)] 1.08 MB
+  blk.3.ffn_down_exps.weight                              Q2_0     [np.uint64(640), np.uint64(2560), np.uint64(512)] 235.93 MB
+  blk.3.ffn_down_shexp.weight                             Q8_0     [np.uint64(640), np.uint64(2560)] 1.74 MB
+  blk.3.ffn_gate_exps.weight                              IQ2_XXS  [np.uint64(2560), np.uint64(640), np.uint64(512)] 216.27 MB
+  blk.3.ffn_gate_inp.weight                               BF16     [np.uint64(2560), np.uint64(512)] 2.62 MB
+  blk.3.ffn_gate_inp_shexp.weight                         BF16     [np.uint64(2560)] 0.01 MB
+  blk.3.ffn_gate_shexp.weight                             Q4_K     [np.uint64(2560), np.uint64(640)] 0.92 MB
+  blk.3.ffn_up_exps.weight                                IQ2_XXS  [np.uint64(2560), np.uint64(640), np.uint64(512)] 216.27 MB
+  blk.3.ffn_up_shexp.weight                               Q4_K     [np.uint64(2560), np.uint64(640)] 0.92 MB
+  blk.3.hc_attn_down.weight                               BF16     [np.uint64(10240), np.uint64(320)] 6.55 MB
+  blk.3.hc_attn_inject.weight                             BF16     [np.uint64(10240), np.uint64(4)] 0.08 MB
+  blk.3.hc_attn_norm.weight                               F32      [np.uint64(10240)] 0.04 MB
+  blk.3.hc_attn_up.weight                                 BF16     [np.uint64(320), np.uint64(10240)] 6.55 MB
+  blk.3.hc_ffn_down.weight                                BF16     [np.uint64(10240), np.uint64(320)] 6.55 MB
+  blk.3.hc_ffn_inject.weight                              BF16     [np.uint64(10240), np.uint64(4)] 0.08 MB
+  blk.3.hc_ffn_norm.weight                                F32      [np.uint64(10240)] 0.04 MB
+  blk.3.hc_ffn_up.weight                                  BF16     [np.uint64(320), np.uint64(10240)] 6.55 MB
+  blk.3.indexer.k_norm.weight                             F32      [np.uint64(128)] 0.00 MB
+  blk.3.indexer.k_proj.weight                             BF16     [np.uint64(2560), np.uint64(128)] 0.66 MB
+  blk.3.indexer.q_norm.weight                             F32      [np.uint64(128)] 0.00 MB
+  blk.3.indexer.q_proj.weight                             BF16     [np.uint64(2560), np.uint64(512)] 2.62 MB
+  per-layer MB: {0: 1027, 1: 811, 2: 1028, 3: 740, 4: 1035, 5: 799, 6: 741, 7: 739, 8: 1029, 9: 801, 10: 805, 11: 740, 12: 844, 13: 741, 14: 795, 15: 844, 16: 745, 17: 846, 18: 1030, 19: 793, 20: 1029, 21: 845, 22: 1035, 23: 1028, 24: 1037, 25: 805, 26: 847, 27: 749, 28: 1269, 29: 1086, 30: 1273, 31: 985, 32: 1266, 33: 1027, 34: 1275, 35: 1187, 36: 958, 37: 1266, 38: 1091, 39: 1037, 40: 851, 41: 949, 42: 1089, 43: 1273, 44: 1194, 45: 955, 46: 1088, 47: 1182}
+===== Qwen3.8-Flash-Next-GSQ-RCO-abliterated-IQ3_XXS-00002-of-00002.gguf
+  split.no = 1
+  split.count = 2
+  split.tensors.count = 1224
+  types: {'IQ4_NL': (1, 28.8)}
+  per_layer_token_embd.weight                             IQ4_NL   [np.uint64(160), np.uint64(320001536)] 28800.14 MB

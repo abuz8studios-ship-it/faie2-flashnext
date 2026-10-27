@@ -1,0 +1,15 @@
+BF16     output_hc_down.weight                      cols 10240  dequant max rel err 0.00e+00  gemv(8 tok) rel err 1.80e-07  OK
+IQ2_S    blk.12.ffn_gate_exps.weight                cols  2560  dequant max rel err 0.00e+00  gemv(8 tok) rel err 1.61e-07  OK
+IQ2_XS   blk.0.ffn_gate_exps.weight                 cols  2560  dequant max rel err 0.00e+00  gemv(8 tok) rel err 9.16e-08  OK
+IQ2_XXS  blk.1.ffn_gate_exps.weight                 cols  2560  dequant max rel err 0.00e+00  gemv(8 tok) rel err 1.02e-07  OK
+IQ3_S    token_embd.weight                          cols  2560  dequant max rel err 0.00e+00  gemv(8 tok) rel err 1.25e-07  OK
+IQ3_XXS  blk.35.ffn_gate_exps.weight                cols  2560  dequant max rel err 0.00e+00  gemv(8 tok) rel err 8.87e-08  OK
+IQ4_NL   blk.0.ffn_down_exps.weight                 cols   640  dequant max rel err 0.00e+00  gemv(8 tok) rel err 1.26e-07  OK
+IQ4_XS   blk.0.attn_qkv.weight                      cols  2560  dequant max rel err 0.00e+00  gemv(8 tok) rel err 1.31e-07  OK
+Q2_0     blk.1.ffn_down_exps.weight                 cols   640  dequant max rel err 0.00e+00  gemv(8 tok) rel err 9.62e-08  OK
+Q4_K     blk.2.ffn_gate_shexp.weight                cols  2560  dequant max rel err 0.00e+00  gemv(8 tok) rel err 1.40e-07  OK
+Q5_K     output.weight                              cols  2560  dequant max rel err 0.00e+00  gemv(8 tok) rel err 9.19e-08  OK
+Q6_K     blk.1.attn_gate.weight                     cols  2560  dequant max rel err 0.00e+00  gemv(8 tok) rel err 1.09e-07  OK
+Q8_0     blk.0.ffn_down_shexp.weight                cols   640  dequant max rel err 0.00e+00  gemv(8 tok) rel err 6.32e-08  OK
+QUANT GATE PASS
+AISHA QUANT WRAPPER DONE

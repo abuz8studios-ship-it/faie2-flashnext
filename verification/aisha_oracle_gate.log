@@ -1,0 +1,40 @@
+===== QUANT GATE :: C:\Users\wirec\AppData\Local\Programs\Python\Python313\python.exe E:\ABU\FAIE2\flashnext\test_fn_quants.py =====
+
+STDERR(tail): Traceback (most recent call last):
+  File "E:\ABU\FAIE2\flashnext\test_fn_quants.py", line 9, in <module>
+    from ref_fn import T, NG, dequant  # noqa: E402  (also puts gguf-py on the path)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\ABU\FAIE2\flashnext\ref_fn.py", line 17, in <module>
+    import torch
+ModuleNotFoundError: No module named 'torch'
+
+===== QUANT GATE exit 1 in 0s =====
+===== ORACLE GATE :: C:\Users\wirec\AppData\Local\Programs\Python\Python313\python.exe E:\ABU\FAIE2\flashnext\gate_fn_ref.py E:\ABU\FAIE2\flashnext\ids_capital.json E:\ABU\FAIE2\flashnext\ref_capital.npy =====
+loaded in 26 s, split at layer 26, GPU0 23.2 GB, GPU1 24.6 GB
+layer  max|h_fn - h_ref| / max|h_ref|   (residual stream after each layer)
+   0  1.02e-05
+   1  9.29e-06
+   2  4.97e-06
+   3  5.21e-06
+   7  8.13e-07
+  15  8.49e-07
+  23  3.37e-07
+  31  4.71e-07
+  39  1.87e-07
+  47  5.52e-07
+top-1 agreement 21/21; max |logprob diff| per position: median 0.0000, max 0.0000
+ORACLE GATE PASS
+
+===== ORACLE GATE exit 0 in 33s =====
+===== BENCH 160 :: C:\Users\wirec\AppData\Local\Programs\Python\Python313\python.exe E:\ABU\FAIE2\flashnext\bench_fn.py 160 =====
+
+STDERR(tail): Traceback (most recent call last):
+  File "E:\ABU\FAIE2\flashnext\bench_fn.py", line 12, in <module>
+    from faie2_tok import QwenTokenizer  # noqa: E402
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\ABU\FAIE2\serve\faie2_tok.py", line 19, in <module>
+    from tokenizers import AddedToken, Regex, Tokenizer, decoders, models, pre_tokenizers
+ModuleNotFoundError: No module named 'tokenizers'
+
+===== BENCH 160 exit 1 in 0s =====
+ALL TESTS DONE
